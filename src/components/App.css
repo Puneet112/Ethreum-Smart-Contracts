@@ -1,1 +1,149 @@
 /* Styles go here */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  background-image: url("../background.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  color: rgb(220, 220, 220) !important;
+}
+
+nav {
+  height: 12vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+nav * {
+  margin: 12px;
+  color: white;
+}
+nav span {
+  display: inline-block;
+  margin-left: 0;
+}
+#account {
+  color: whitesmoke;
+}
+.align {
+  margin-top: 12vh;
+}
+.stake {
+  margin-top: 32px;
+}
+.stake:hover {
+  background-color: white;
+  color: #007bff;
+}
+
+.position {
+  position: relative;
+  min-height: 100vh;
+}
+
+.animate-left {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.animate-top {
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.img-front {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  font-size: 1.2em;
+  width: 70%;
+  margin: 0 15% 32px 15%;
+}
+
+.container h1 {
+  padding: 20px;
+  margin-top: 32px;
+  text-align: center;
+  margin-bottom: 32px;
+  color: rgb(235, 88, 88);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.container h1::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  bottom: 0%;
+  transition: 0.5s ease-in-out;
+  background: rgb(235, 88, 88);
+  height: 3px;
+  width: 100%;
+}
+
+.container h1:hover::before {
+  left: 0%;
+}
+
+.container h4 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+a,
+a:hover {
+  color: rgb(235, 88, 88);
+  text-decoration: none;
+}
+
+.side-content {
+  width: 50%;
+  float: left;
+  margin-right: 5%;
+}
+.side-img {
+  width: 45%;
+}
+
+.smart-contracts {
+  margin-bottom: 20px;
+  color: rgb(235, 88, 88);
+}
+.side-content1 {
+  width: 50%;
+  float: right;
+  margin-left: 5%;
+}
+.side-img1 {
+  width: 45%;
+}
+
+table tr {
+  color: whitesmoke;
+}
+
+.tokens {
+  border-radius: 5px 15px;
+  cursor: pointer;
+  border-style: ridge;
+}
