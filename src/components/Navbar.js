@@ -6,7 +6,11 @@ class Navbar extends Component {
   render() {
     let content;
     if (this.props.account) {
-      content = this.props.account;
+      content = (
+        <div data-toggle="tooltip" data-placement="bottom" title="ETH Address">
+          {this.props.account}
+        </div>
+      );
     } else {
       content = (
         <Link to="/tokens">

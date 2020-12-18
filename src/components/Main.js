@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import dai from "../dai.png";
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: "",
+    };
+  }
   render() {
     return (
       <div id="content" className="mt-3 animate-left">
@@ -28,6 +34,8 @@ class Main extends Component {
             </tr>
           </tbody>
         </table>
+
+        <div className="error">{this.state.error}</div>
 
         <div className="card mb-4">
           <div className="card-body">
@@ -79,11 +87,18 @@ class Main extends Component {
                     amount = window.web3.utils.toWei(amount, "Ether");
                     this.props.stakeTokens(amount);
                   } else if (amount > balance) {
-                    alert(
-                      "Amount must be less than or equal to Available Balance"
-                    );
+                    this.setState({
+                      error:
+                        "Error - Amount must be less than or equal to Available Balance",
+                    });
+                    // alert(
+                    //   "Amount must be less than or equal to Available Balance"
+                    // );
                   } else {
-                    alert("Amount must be greater than 0");
+                    this.setState({
+                      error: "Error - Amount must be greater than 0",
+                    });
+                    // alert("Amount must be greater than 0");
                   }
                 }}
               >
@@ -107,11 +122,18 @@ class Main extends Component {
                     amount = window.web3.utils.toWei(amount, "Ether");
                     this.props.unstakeTokens(amount);
                   } else if (amount > stakingBalance) {
-                    alert(
-                      "Amount must be less than or equal to Staking Balance"
-                    );
+                    this.setState({
+                      error:
+                        "Error - Amount must be less than or equal to Staking Balance",
+                    });
+                    // alert(
+                    //   "Amount must be less than or equal to Staking Balance"
+                    // );
                   } else {
-                    alert("Amount must be greater than 0");
+                    this.setState({
+                      error: "Error - Amount must be greater than 0",
+                    });
+                    // alert("Amount must be greater than 0");
                   }
                 }}
               >

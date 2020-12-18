@@ -51,21 +51,21 @@ function Home() {
               </ul>
             </div>
             <img
-              className="side-img"
+              className="side-img img-fluid"
               alt="cryptocurrency"
               src={require("../cryptocurrency.jpg")}
             />
           </div>
           <div className="mt-5">
-            <h3 className="smart-contracts">Smart Contracts</h3>
+            <h3 className="topic-heading">Smart Contracts</h3>
             <img
-              className="side-img1"
+              className="side-img1 img-fluid"
               alt="cryptocurrency"
               src={require("../smart-contracts.png")}
             />
             <div className="side-content1">
               <p>
-                A "smart contract" is simply a program that runs on the Ethereum
+                A smart contract is simply a program that runs on the Ethereum
                 blockchain. It's a collection of code (its functions) and data
                 (its state) that resides at a specific address on the Ethereum
                 blockchain.
@@ -79,6 +79,31 @@ function Home() {
                 that execute a function defined on the smart contract.
               </p>
             </div>
+          </div>
+
+          <div className="section">
+            <h3 className="topic-heading">Ethereum Dapp</h3>
+            <div className="side-content">
+              <p>
+                A decentralized application (dapp) is an application built on a
+                decentralized network that combines a smart contract and a
+                frontend user interface.
+              </p>
+              <p>
+                A smart contract is like a set of rules that live on-chain for
+                all to see and run exactly according to those rules. Imagine a
+                vending machine: if you supply it with enough funds and the
+                right selection, you'll get the item you want. And like vending
+                machines, smart contracts can hold funds much like your Ethereum
+                account. This allows code to mediate agreements and
+                transactions.
+              </p>
+            </div>
+            <img
+              className="side-img img-fluid"
+              alt="Ethereum Dapp"
+              src={require("../ethereum-dapp.jpg")}
+            />
           </div>
         </div>
       </div>

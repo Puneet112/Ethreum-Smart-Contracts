@@ -115,17 +115,18 @@ class App extends Component {
       });
     setTimeout(() => {
       window.location.reload();
-    }, 4000);
+    }, 5000);
   };
 
-  unstakeTokens = (amount) => {
-    this.setState({ loading: true });
-    this.state.tokenFarm.methods
+  unstakeTokens = async (amount) => {
+    await this.setState({ loading: true });
+    await this.state.tokenFarm.methods
       .unstakeTokens(amount)
       .send({ from: this.state.account })
-      .on("transactionHash", (hash) => {
-        this.setState({ loading: false });
+      .on("transactionHash", async (hash) => {
+        await this.setState({ loading: false });
       });
+    window.location.reload();
   };
 
   render() {

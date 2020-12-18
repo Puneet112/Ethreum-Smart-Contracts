@@ -8,8 +8,7 @@ body {
   background-image: url("../background.jpg");
   height: 100%;
   background-position: center;
-  background-repeat: no-repeat;
-  /* background-size: cover; */
+  background-size: cover;
   color: rgb(220, 220, 220) !important;
 }
 
@@ -125,7 +124,7 @@ a:hover {
   width: 45%;
 }
 
-.smart-contracts {
+.topic-heading {
   margin-bottom: 20px;
   color: rgb(235, 88, 88);
 }
@@ -146,4 +145,15 @@ table tr {
   border-radius: 5px 15px;
   cursor: pointer;
   border-style: ridge;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.25em;
+  color: rgb(233, 50, 50);
+  margin-bottom: 12px;
+}
+
+.section {
+  margin-top: 100px;
 }
