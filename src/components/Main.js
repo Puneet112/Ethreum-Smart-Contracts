@@ -46,7 +46,7 @@ class Main extends Component {
               </div>
               <div className="input-group mb-4">
                 <input
-                  type="text"
+                  type="number"
                   ref={(input) => {
                     this.input = input;
                   }}
@@ -69,10 +69,19 @@ class Main extends Component {
                 onClick={(event) => {
                   event.preventDefault();
                   let amount;
-                  amount = this.input.value.toString();
-                  if (amount !== "") {
+                  amount = Number(this.input.value);
+                  let balance = window.web3.utils.fromWei(
+                    this.props.daiTokenBalance,
+                    "Ether"
+                  );
+                  if (amount > 0 && amount <= balance) {
+                    amount = amount.toString();
                     amount = window.web3.utils.toWei(amount, "Ether");
                     this.props.stakeTokens(amount);
+                  } else if (amount > balance) {
+                    alert(
+                      "Amount must be less than or equal to Available Balance"
+                    );
                   } else {
                     alert("Amount must be greater than 0");
                   }
@@ -88,10 +97,19 @@ class Main extends Component {
                 onClick={(event) => {
                   event.preventDefault();
                   let amount;
-                  amount = this.input.value.toString();
-                  if (amount !== "") {
+                  amount = Number(this.input.value);
+                  let stakingBalance = window.web3.utils.fromWei(
+                    this.props.stakingBalance,
+                    "Ether"
+                  );
+                  if (amount > 0 && amount <= stakingBalance) {
+                    amount = amount.toString();
                     amount = window.web3.utils.toWei(amount, "Ether");
                     this.props.unstakeTokens(amount);
+                  } else if (amount > stakingBalance) {
+                    alert(
+                      "Amount must be less than or equal to Staking Balance"
+                    );
                   } else {
                     alert("Amount must be greater than 0");
                   }
